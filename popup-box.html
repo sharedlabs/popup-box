@@ -1,0 +1,42 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../overlay-container/animated-overlay-mixin.html">
+
+<!--
+`popup-box`
+
+@demo demo/index.html 
+-->
+
+<dom-module id="popup-box">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    [[type]]
+  </template>
+
+  <script>
+
+    class PopupBox extends AnimatedOverlayMixin(Polymer.Element) {
+      
+      static get is() {return 'popup-box';}
+
+      static get config() {
+        return {
+          properties: {
+
+            type: String
+
+          }
+        };
+      }
+
+    }
+
+    customElements.define(PopupBox.is, PopupBox);
+
+  </script>
+</dom-module>
